@@ -1,10 +1,13 @@
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Stack } from "expo-router";
+
+
+const Tab = createBottomTabNavigator();
 
 export default function RootLayout() {
   return (
     <Stack>
-      <Stack.Screen name="index" options={{title: "Home page"}} />
-      <Stack.Screen name="searchScreen" options={{title: "Browse"}} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
   )
   ;
