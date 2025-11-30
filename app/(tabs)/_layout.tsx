@@ -1,14 +1,38 @@
-import { Stack, Tabs } from 'expo-router'
-import React from 'react'
+import { Tabs } from 'expo-router';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
+import React from 'react';
 
-const _layout = () => {
+export default function Layout() {
   return (
-    <Tabs>
-        <Stack.Screen name='home' options={{title:"home" , headerShown : false}} />
-        <Stack.Screen name='SearchBar' options={{title:"Browse" , headerShown : false}} />
-        <Stack.Screen name='settings' options={{title:"settings" , headerShown : false}} />
-    </Tabs>
-  )
-}
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: {
+          backgroundColor: "#111010ff",
+        },
+        tabBarActiveTintColor: "white",
+        tabBarInactiveTintColor: "#909090ff",
+      }}
+    >
+      <Tabs.Screen
+        name="home"
+        options={{
+          title: "Home",
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="home" size={size} color={color} />
+          ),
+        }}
+      />
 
-export default _layout
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: "Settings",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="settings-outline" size={size} color={color} />
+          ),
+        }}
+      />
+    </Tabs>
+  );
+}
