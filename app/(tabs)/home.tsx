@@ -2,10 +2,13 @@ import { Link } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import SearchBar from '../SearchBar';
+import CategoryCards from '../CategoryCards';
+import { StatusBar } from 'expo-status-bar';
 
 const Home = () => {
-    return (
+    return (<>
         <View style={styles.container}>
+        <StatusBar style="light" translucent backgroundColor="transparent" />
         <Text style={styles.title}>How can I help you today!</Text>
 
         <SearchBar />
@@ -15,7 +18,10 @@ const Home = () => {
         <Link style={styles.link} href="/searchScreen">
             go to logIn
         </Link>
+        
         </View>
+        <CategoryCards />
+    </>
     );
 };
 
@@ -26,7 +32,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         paddingTop: 70,
-        backgroundColor: "#121212",
+        paddingHorizontal : 10,
+        backgroundColor: "#181818",
     },
     title: {
         color: "white",
